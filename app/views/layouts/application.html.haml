@@ -1,0 +1,27 @@
+%html
+  %head
+    %title Simplewiki
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{:style => "padding-top: 60px"}
+    .topbar
+      .topbar-inner
+        .container
+          %h3= link_to "Simplewiki", "/"
+          %ul.nav.pills
+            %li= link_to "Link1", "/path1"
+            %li= link_to "Link2", "/path2"
+            %li= link_to "Link3", "/path3"
+    .container
+      .content
+        .row
+          .span11
+            = yield
+          .span1  
+          .span4
+            %h3 Sidebar
+            %ul.nav.nav-pills
+              %li= link_to "Link1", "/path1"
+              %li= link_to "Link2", "/path2"
+              %li= link_to "Link3", "/path3"
