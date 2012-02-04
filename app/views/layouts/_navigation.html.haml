@@ -8,13 +8,6 @@
       %a.brand{:href => "#"} Project name
       .nav-collapse
         %ul.nav
-          %li.active
-            %a{:href => "#"} Home
-          %li
-            %a{:href => "#about"} About
-          %li
-            %a{:href => "#contact"} Contact
-        %p.navbar-text.pull-right
-          Logged in as
-          %a{:href => "#"} username
-      / /.nav-collapse
+          - Wiki.all.each do |wiki|
+            %li{:class => "#{wiki.name == 'Engineering' ? 'active' : nil}"}
+              %a{:href => wiki_path(wiki)}= wiki.name

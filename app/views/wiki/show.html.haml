@@ -1,0 +1,15 @@
+.span9
+  .hero-unit
+    %h1= @wiki.name
+    %p= @wiki.homepage
+    %p
+      %a.btn.btn-primary.btn-large Learn more »
+.row-fluid
+- @wiki.wiki_topics.each_slice(3) do |topics|
+  .row-fluid
+    - topics.each do |topic|
+      .span4
+        %h2= topic.title
+        %p= topic.description
+        %p
+          %a.btn{:href => wiki_topic_path(topic)} View details »

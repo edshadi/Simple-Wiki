@@ -1,8 +1,9 @@
 class Init < ActiveRecord::Migration
   def change
     create_table :wikis do |t|
+      t.string  :name
       t.text    :homepage
-      t.boolean :active
+      t.boolean :active, :default => true
 
       t.timestamps
     end
@@ -10,7 +11,7 @@ class Init < ActiveRecord::Migration
     create_table :wiki_topics do |t|
       t.string  :title
       t.text    :description
-      t.boolean :active
+      t.boolean :active, :default => true
       t.integer :wiki_id
       t.timestamps
     end
@@ -18,7 +19,7 @@ class Init < ActiveRecord::Migration
     create_table :wiki_pages do |t|
       t.string  :title
       t.text    :content
-      t.boolean :active
+      t.boolean :active, :default => true
       t.integer :wiki_topic_id
       t.timestamps
     end

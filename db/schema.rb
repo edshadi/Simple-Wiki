@@ -16,26 +16,27 @@ ActiveRecord::Schema.define(:version => 20120203222541) do
   create_table "wiki_pages", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.boolean  "active"
+    t.boolean  "active",        :default => true
     t.integer  "wiki_topic_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "wiki_topics", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.boolean  "active"
+    t.boolean  "active",      :default => true
     t.integer  "wiki_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "wikis", :force => true do |t|
+    t.string   "name"
     t.text     "homepage"
-    t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "active",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end
