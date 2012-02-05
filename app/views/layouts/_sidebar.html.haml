@@ -1,31 +1,7 @@
 .well.sidebar-nav
   %ul.nav.nav-list
-    %li.nav-header Sidebar
-    %li.active
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li.nav-header Sidebar
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li.nav-header Sidebar
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
+    - WikiTopic.all.each do |topic|
+      %li.nav-header= link_to topic.title, wiki_topic_path(topic)
+      - topic.wiki_pages do |page|
+        %li
+          %a{:href => wiki_page_path(page)} page.title

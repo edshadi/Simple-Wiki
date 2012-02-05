@@ -4,12 +4,10 @@
     %p= @topic.description
     %p
       %a.btn.btn-primary.btn-large Learn more »
-.row-fluid
-- @topic.wiki_pages.each_slice(3) do |pages|
-  .row-fluid
-    - pages.each do |page|
-      .span4
-        %h2= page.title
-        %p= page.content
-        %p
-          %a.btn{:href => wiki_page_path(page)} View details »
+  - @topic.wiki_pages.each_slice(3) do |pages|
+    .row-fluid
+      - pages.each do |page|
+        .span4
+          %h2= page.title
+          %p
+            %a.btn{:href => wiki_page_path(page)} View details »
