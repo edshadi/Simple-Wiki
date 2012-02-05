@@ -1,7 +1,9 @@
 .well.sidebar-nav
   %ul.nav.nav-list
-    - WikiTopic.all.each do |topic|
-      %li.nav-header= link_to topic.title, wiki_topic_path(topic)
+    %h3{:style => "color: darkorange;"}= "#{current_wiki.name.capitalize} topics:"
+    %hr
+    - current_wiki.wiki_topics.all.each do |topic|
+      %li.nav-header= link_to topic.title, wiki_topic_path(topic), :style => "color: black"
       - topic.wiki_pages do |page|
         %li
           %a{:href => wiki_page_path(page)} page.title

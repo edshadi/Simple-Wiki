@@ -1600,7 +1600,7 @@ table .span12 {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #f5f5f5;
+  background-color: lightblue;
   border: 1px solid #eee;
   border: 1px solid rgba(0, 0, 0, 0.05);
   -webkit-border-radius: 4px;
@@ -3332,7 +3332,7 @@ a.thumbnail:hover {
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
-  background-color: #f5f5f5;
+  background-color: lightblue;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;

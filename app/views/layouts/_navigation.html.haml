@@ -5,9 +5,9 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand{:href => "#"} Project name
+      %a.brand{:href => "#"} Simple Wiki
       .nav-collapse
         %ul.nav
           - Wiki.all.each do |wiki|
-            %li{:class => "#{wiki.name == 'Engineering' ? 'active' : nil}"}
+            %li
               %a{:href => wiki_path(wiki)}= wiki.name

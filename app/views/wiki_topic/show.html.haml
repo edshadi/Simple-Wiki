@@ -1,13 +1,12 @@
-.span9
+.span8
   .hero-unit
     %h1= @topic.title
     %p= @topic.description
-    %p
-      %a.btn.btn-primary.btn-large Learn more »
   - @topic.wiki_pages.each_slice(3) do |pages|
     .row-fluid
       - pages.each do |page|
         .span4
           %h2= page.title
+          %p= page.description
           %p
-            %a.btn{:href => wiki_page_path(page)} View details »
+            %a.btn{:href => wiki_page_path(page)} gimme more »

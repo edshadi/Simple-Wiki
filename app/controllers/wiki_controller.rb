@@ -1,9 +1,6 @@
 class WikiController < ApplicationController
-  def index
-    @wikis = Wiki.all
-  end
-
   def show
-    @wiki = Wiki.find params[:id]
+    @wiki = Wiki.find_by_id(params[:id]) || Wiki.first
+    session[:wiki_id] = @wiki.id
   end
 end
