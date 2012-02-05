@@ -1,0 +1,20 @@
+.span8
+  = form_for @wiki_page, :html => {:class => 'form-horizontal'} do |f|
+    - if @wiki_page.errors.any?
+      #errorExplanation
+        %h3= "#{pluralize(@wiki.errors.count, 'error')} prohibited this class from being saved:"
+        %ul
+          - @wiki_page.errors.full_messages.each do |msg|
+            %li= msg
+    %fieldset
+      %legend Wiki
+      .control-group
+        = f.label :title
+        .controls= f.text_field :title, :style => "width: 700px"
+      .control-group
+        = f.label :content
+        .controls= f.text_area :content, :style => "width: 700px"
+        .controls= select("post", "wiki_topic_id", WikiTopic.all.collect {|p| [ p.title, p.id ] }, {:prompt => 'Select Wiki Topic'})
+      .form-actions
+        %button.btn.btn-primary{:type => "submit"} Save changes
+        %button.btn{:href => wiki_page_path(@wiki_page) } Cancel

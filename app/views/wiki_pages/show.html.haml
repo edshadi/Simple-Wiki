@@ -1,1 +1,6 @@
-.span8= @page.content.html_safe
+.span8
+  %h1= @page.title
+  .btn.btn-warning= link_to 'Edit', edit_wiki_page_path(@page), :style => 'color: black'
+  .btn.btn-danger= link_to 'Destroy', wiki_page_path(@page), :method => 'delete', :confirm => true, :style => 'color: black'
+  %hr
+  .row-fluid= @page.content.html_safe

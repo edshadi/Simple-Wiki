@@ -1,7 +1,10 @@
 .span8
   .hero-unit
     %h1= @topic.title
-    %p= @topic.description
+    %p
+      = @topic.description
+      .btn.btn-warning= link_to 'Edit', edit_wiki_topic_path(@topic), :style => 'color: black'
+      .btn.btn-danger= link_to 'Destroy', wiki_topic_path(@topic), :method => 'delete', :confirm => true, :style => 'color: black'
   - @topic.wiki_pages.each_slice(3) do |pages|
     .row-fluid
       - pages.each do |page|
