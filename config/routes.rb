@@ -1,6 +1,6 @@
 Simplewiki::Application.routes.draw do
-  root :to => 'wiki#show'
-  resources :wiki
-  resources :wiki_topic
-  resources :wiki_page
+  root :to => 'wikis#show'
+  resources :wikis
+  resources :wiki_topics
+  resources :wiki_pages
 end
