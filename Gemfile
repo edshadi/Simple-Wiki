@@ -6,6 +6,8 @@ gem 'resque-scheduler'
 gem 'jquery-rails'
 gem 'rails3-generators'
 gem 'haml-rails'
+gem 'factory_girl_rails'
+gem 'faker'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,12 +27,7 @@ group :development do
   end
 end
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'faker'
   gem 'rspec-rails'
-end
-
-group :test do
   gem 'resque_unit'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
