@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
-gem 'mysql2'
-gem 'resque'
+gem 'pg'
 gem 'resque-scheduler'
 gem 'jquery-rails'
 gem 'rails3-generators'
