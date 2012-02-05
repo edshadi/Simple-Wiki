@@ -10,6 +10,6 @@
       - pages.each do |page|
         .span4
           %h2= page.title
-          %p= page.description
+          %p= page.description.html_safe
           %p
             %a.btn{:href => wiki_page_path(page)} gimme more »
