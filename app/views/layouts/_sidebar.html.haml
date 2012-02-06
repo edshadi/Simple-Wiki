@@ -4,10 +4,11 @@
 %hr
 .well.sidebar-nav
   %ul.nav.nav-list
-    %h3= "#{current_wiki.name.titleize} Topics:"
+    %h3= current_wiki.present? ? "#{current_wiki.name.titleize} Topics:" : "Wiki Topics"
     %hr
-    - current_wiki.wiki_topics.all.each do |topic|
-      %li.nav-header= link_to topic.title, wiki_topic_path(topic), :style => "color: black"
-      - topic.wiki_pages do |page|
-        %li
-          %a{:href => wiki_page_path(page)} page.title
+    - if current_wiki.present?
+      - current_wiki.wiki_topics.all.each do |topic|
+        %li.nav-header= link_to topic.title, wiki_topic_path(topic), :style => "color: black"
+        - topic.wiki_pages do |page|
+          %li
+            %a{:href => wiki_page_path(page)} page.title
