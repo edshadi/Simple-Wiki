@@ -12,6 +12,7 @@ gem 'tinymce-rails'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem "uglifier"
   gem 'compass',      '~> 0.12.alpha'
   gem "twitter-bootstrap-rails", "~> 2.0rc0"
 end
