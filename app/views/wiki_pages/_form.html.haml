@@ -14,7 +14,7 @@
       .control-group
         = f.label :content
         .controls= f.text_area :content, :style => "width: 700px"
-        .controls= select("post", "wiki_topic_id", WikiTopic.all.collect {|p| [ p.title, p.id ] }, {:prompt => 'Select Wiki Topic'})
+        .controls= f.select :wiki_topic_id, WikiTopic.all.collect {|p| [ p.title, p.id ] }
       .form-actions
         %button.btn.btn-primary{:type => "submit"} Save changes
         %button.btn{:href => wiki_page_path(@wiki_page) } Cancel
