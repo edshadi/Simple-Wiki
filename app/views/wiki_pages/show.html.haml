@@ -1,5 +1,6 @@
 .span8
   %h1= @page.title
+  %hr
   .btn.btn-warning= link_to 'Edit', edit_wiki_page_path(@page), :style => 'color: black'
   .btn.btn-danger= link_to 'Destroy', wiki_page_path(@page), :method => 'delete', :confirm => true, :style => 'color: black'
   %hr

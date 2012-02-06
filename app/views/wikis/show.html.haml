@@ -1,6 +1,7 @@
 .span8
   .hero-unit
     %h1= @wiki.name
+    %hr
     %p
       = @wiki.homepage
       .btn.btn-warning= link_to 'Edit', edit_wiki_path(@wiki), :style => 'color: black'
