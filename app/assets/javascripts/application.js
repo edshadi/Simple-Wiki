@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require tinymce-jquery
+//= require_tree .
+
+$(function() {
+  $('textarea').tinymce({
+    theme: 'simple'
+  });
+});
