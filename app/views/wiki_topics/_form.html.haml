@@ -19,3 +19,8 @@
         %button.btn.btn-primary{:type => "submit"} Save changes
         %button.btn{:href => wiki_topic_path(@wiki_topic) } Cancel
 
+:javascript
+  $(function() {
+    $('textarea').tinymce({
+    });
+  });
