@@ -11,6 +11,6 @@
       - topics.each do |topic|
         .span4
           %h2= topic.title
-          %p= topic.description.html_safe
+          %p= strip_tags(topic.description)
           %p
             %a.btn{:href => wiki_topic_path(topic)} gimme more »
